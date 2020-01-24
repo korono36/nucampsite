@@ -41,11 +41,10 @@ class Reservation extends Component {
     render() {
         return (
             
-            <Animatiable.View 
+            <Animatable.View 
             animation='ZoomIn' 
             duration={2000} 
             delay={1000}>
-            <Animatable.View>
                 <View style={styles.formRow}>
                     <Text style={styles.formLabel}>Number of Campers</Text>
                     <Picker
@@ -96,7 +95,26 @@ class Reservation extends Component {
                 </View>
                 <View style={styles.formRow}>
                     <Button
-                        onPress={() => this.handleReservation()}
+                        onPress={() => {
+                            this.handleReservation()
+                            Alert.alert(
+                                'Begin Search?',
+                                `Number of Campers: ${this.state.campers}\n\nHike-In: ${this.state.hikeIn}\n\nDate: ${this.state.date}`
+                                ,
+                                // `Date: ${this.state.date}`,
+                                [
+                                  {
+                                    text: 'Cancel',
+                                    onPress: () => console.log('cancel'),
+                                    style: 'cancel'
+                                  },
+                                  {
+                                    text: 'OK',
+                                    onPress: () => console.log('Ok')
+                                  }
+                                ],
+                                { cancelable: false }
+                              )}}
                         title='Search'
                         color='#5637DD'
                         accessibilityLabel='Tap me to search for available campsites to reserve'
@@ -106,33 +124,6 @@ class Reservation extends Component {
         );
     }
 }
-
-const submitButton = [
-        text: 'Submit',
-        type: 'submit',
-        onPress: () => {
-            Alert.alert(
-                'Begin Search?',
-                [
-                    {
-                        text: 'Number of Campers',
-                        text: 'Hike In',
-                        text: 'Date'
-                    }
-                    {
-                        text: 'Cancel',
-                        onPress: () => console.log('Cancel Pressed'),
-                        style: 'cancel'
-                    }
-                    {
-                        text: 'OK',
-                        onPress: () => console.log('OK Pressed'),
-                    }
-                ],
-                {cancelable: false}
-            )
-        }
-    ];
 
 const styles = StyleSheet.create({
     formRow: {

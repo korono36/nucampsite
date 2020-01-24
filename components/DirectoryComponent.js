@@ -24,7 +24,7 @@ class Directory extends Component {
         const { navigate } = this.props.navigation;
             const renderDirectoryItem = ({item}) => {
                 return (
-                    <Animatiable.View animation='fadeInRightBig' duration={2000}>
+                    <Animatable.View animation='fadeInRightBig' duration={2000}>
                         <Tile
                             title={item.name}
                             caption={item.description}
@@ -32,7 +32,7 @@ class Directory extends Component {
                             onPress={() => navigate('CampsiteInfo', { campsiteId: item.id })}
                             imageSrc={{uri: baseUrl + item.id.ToString()}}
                         />
-                    <Animatable.View>
+                    </Animatable.View>
             );
         };
 

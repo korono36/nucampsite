@@ -60,7 +60,7 @@ class About extends Component{
 
         return (
             <ScrollView>
-                <Animatiable.View animation='fadeInDown' duration={2000} delay={1000}>
+                <Animatable.View animation='fadeInDown' duration={2000} delay={1000}>
                 <Mission/>
                     <Card
                     title="Community Partners">
@@ -70,7 +70,7 @@ class About extends Component{
                        keyExtractor={item=>item.id.toString()}
                        />
                     </Card>
-                <Animatable.View>
+                </Animatable.View>
             </ScrollView>
         );
     }
