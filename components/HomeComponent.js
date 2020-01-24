@@ -71,7 +71,7 @@ class Home extends Component {
 
     render() {
         return (
-            <Animated.ScrollView style={{transform: [scale: this.state.scaleValue]}}>
+            <Animated.ScrollView style={{transform: {scale: this.state.scaleValue}}}>
                 <RenderItem 
                     item={this.props.campsites.campsites.filter(campsite => campsite.featured)[0]} />
                      isLoading={this.props.campsites.isLoading}
