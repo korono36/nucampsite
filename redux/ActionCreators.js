@@ -155,5 +155,10 @@ export const addFavorite = campsiteId => ({
 
 export const postComment = comments => ({
     type: ActionTypes.POST_COMMENT,
-    patload: comments
+    payload: comments
+});
+
+export const delete_favorite = campsiteId => ({
+    type: ActionTypes.DELETE_FAVORITE,
+    payload: campsiteId
 })
