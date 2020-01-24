@@ -3,9 +3,9 @@ import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 
 function Loading() {
     return (
-        <View style={StyleSheet.loadingView}>
-            <ActivityIndicator size='large' color='#5367DD'/ >
-                <Text style={StyleSheet.loadingText}>Loading...</Text>
+        <View style={styles.loadingView}>
+            <ActivityIndicator size='large' color='#5637DD' />
+            <Text style={styles.loadingText}>Loading . . .</Text>
         </View>
     );
 }
